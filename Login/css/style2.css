@@ -1,9 +1,10 @@
-/*@import url(http://fonts.googleapis.com/css?family=Open+Sans);*/
+@import url(http://fonts.googleapis.com/css?family=Tenor+Sans);
 
 html {
-    background-color: #eef;
-    font-family: "Open Sans", sans-serif;
+    background-color: #434fac;
+    font-family: "Tenor Sans", sans-serif;
 }
+
 .container {
 
     height: 400px;
@@ -22,13 +23,11 @@ html {
     -webkit-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
 }
-#logo-holder{
-    margin: 0 auto; 
-    height: 100px;
-    width: 100px;
-    
-}
+
 .logo{
+    margin-left: 38%;
+    margin-right: auto;
+    position: relative;
     background: none;
 }
 
@@ -37,7 +36,7 @@ html {
     top:10%;
 
     position: relative;
-    width: 80%;
+    width: 450px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -73,12 +72,12 @@ html {
 
 .input-txt-error {
     width: 100%;
-    padding-top:10px;padding-bottom: 10px;
+    padding: 20px 10px;
     background: #972f24;
     border: none;
     font-size: 1em;
     color: white;
-    border-bottom: 1px solid rgba(250, 250, 250, 0.4);
+    border-bottom: 1px dotted rgba(250, 250, 250, 0.4);
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -161,11 +160,4 @@ input:-webkit-autofill:active {
     line-height: 3em;
     color: white;
     text-decoration: none;
-}
-
-@media all and (max-width:600px){
-    .container{width: 90%;height: auto;box-shadow: none; padding-top: 10px;padding-bottom: 10px;}
-    .logo{margin-bottom: 5px;}
-    .login{width: 94%;}
-    body,html{background-color: #5D92BA;}
 }
