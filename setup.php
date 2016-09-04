@@ -12,15 +12,15 @@ sql("CREATE TABLE IF NOT EXISTS users(
      birthday  DATE NOT NULL,
      sex INT NOT NULL,
      address  VARCHAR (500),
-     profession  DECIMAL (18, 2),
+     profession  VARCHAR (30),
      firstname VARCHAR (50) NOT NULL,
      middlename VARCHAR (50),
      lastname VARCHAR (50) NOT NULL,
      aadhar VARCHAR (20) NOT NULL,
      phone INT,
      email VARCHAR (50),
-     lat DOUBLE,
-     long DOUBLE,
+     latitude DOUBLE,
+     longitude DOUBLE,
      lasttime TIMESTAMP,
      initialtime TIMESTAMP,
      PRIMARY KEY (id)
@@ -42,8 +42,8 @@ sql("CREATE TABLE IF NOT EXISTS cookiestore(
      info VARCHAR (200),
      active BIT NOT NULL,
      closed BIT NOT NULL,
-     lat DOUBLE,
-     long DOUBLE,
+     latitude DOUBLE,
+     longitude DOUBLE,
      PRIMARY KEY (id)
      );");
 if ($conn->connect_error) {

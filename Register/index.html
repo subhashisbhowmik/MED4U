@@ -5,10 +5,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Registration Form</title>
-    <link rel="stylesheet" href="css/new.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
+<div id="wrapper">
 <h1 class="register-title">Welcome</h1>
 <form class="register">
 
@@ -24,8 +25,9 @@
         <label for="sex_m" class="register-switch-label">Male</label>
     </div>
 
-
-    <label class="DOB">Birthday</label></br>
+    <div id="birthday-input">
+    
+    <label class="DOB">Birthday</label><br/>
     <label class="month">
         <select class="select-style" name="BirthMonth">
             <option value="">Month</option>
@@ -47,14 +49,18 @@
                       style="text-decoration-color: #5D92BA"></label>
         <label><input class="birthyear" maxlength="4" name="BirthYear" placeholder="Year" required=""></label>
     </label>
+    
+    </div>
 
     <div>
-    <input type="email" class="register-input" placeholder="Email address" required>
-    <span style="display: inline"><img height="20px" src="../images/logo.png"/></span></div>
-    <input type="password" class="register-input" maxlength="8" placeholder="Password" required>
-    <input type="password" class="register-input" maxlength="8" placeholder="Confirm Password" required>
+                    <!--  for cross <div class="check-logo">&#xd7;</div>  -->
+    <input type="email" class="register-input input-with-checkbox" placeholder="Email address" required><div class="check-logo">&#x2713;</div>
+    <!--span style="display: inline"><img height="20px" src="../images/logo.png"/></span--></div>
+    <input type="password" class="register-input input-with-checkbox" maxlength="8" placeholder="Password" required><div class="check-logo">&#x2713;</div>
+    <input type="password" class="register-input input-with-checkbox" maxlength="8" placeholder="Confirm Password" required><div class="check-logo">&#x2713;</div>
     <input type="submit" value="GET STARTED" class="register-button">
 </form>
+</div>
 
 <script type="text/javascript" src="../js/jq.js"></script>
 <script type="text/javascript" src="js/index.js"></script>

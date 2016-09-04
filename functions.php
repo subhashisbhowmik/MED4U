@@ -66,7 +66,7 @@ function decode($str){
 //echo decode(encode("Hi! It's me.\n<br>"));
 //echo encode("Hi! It's me.\n<br>");
 
-function getAadharInfo($cardNumber){ //TODO:Update
+function getAadharInfo($cardNumber){ //TODO:Update when ACCESS GRANTED
     $a=array('a','a');
     array_push($a,'0');
     array_push($a,'1');
@@ -90,4 +90,3 @@ function clearAllCookies(){
     }
 }
 ?>
-
