@@ -1,2 +1,2 @@
 #MED4U
-Prototype for a interconnected network platform for People, Doctors and Medical Farms.
+Prototype for an interconnected network platform for People, Doctors and Medical Farms.
