@@ -1,3 +1,9 @@
+<?php
+//session_start();
+if(isset($_COOKIE['username'])) //die($_COOKIE['username']);
+    header("Location: ../");
+?>
+
 <!DOCTYPE html>
 <!-- saved from url=(0035)http://medipack.ddns.net/med/Login/ -->
 <html>

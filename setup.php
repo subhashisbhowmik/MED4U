@@ -17,7 +17,7 @@ sql("CREATE TABLE IF NOT EXISTS users(
      middlename VARCHAR (50),
      lastname VARCHAR (50) NOT NULL,
      aadhar VARCHAR (20) NOT NULL,
-     phone INT,
+     phone VARCHAR(15),
      email VARCHAR (50),
      latitude DOUBLE,
      longitude DOUBLE,
@@ -32,7 +32,7 @@ if ($conn->connect_error) {
 if($reset==="1") sql('DROP TABLE IF EXISTS `users`;');
 sql("CREATE TABLE IF NOT EXISTS cookiestore(
      id   INT UNIQUE NOT NULL AUTO_INCREMENT,
-     username VARCHAR (50) UNIQUE NOT NULL,
+     username VARCHAR (50) NOT NULL,
      token VARCHAR (256) NOT NULL,
      keyval VARCHAR (256) NOT NULL,
      inittime TIMESTAMP NOT NULL,

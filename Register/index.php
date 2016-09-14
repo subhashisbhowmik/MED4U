@@ -1,5 +1,4 @@
-<html>
-
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -14,7 +13,7 @@
 <form class="register" method="post" action="../register.php">
 
     <input type="text" class="register-input" name="fname" placeholder="First Name" maxlength="20" required>
-    <input type="text" class="register-input" name="mname" placeholder="Middle Name" maxlength="20">
+    <input type="text" class="register-input not-req" name="mname" placeholder="Middle Name" maxlength="20">
     <input type="text" class="register-input" name="lname" placeholder="Last Name" maxlength="20" required>
     <br>
     <br>
@@ -53,12 +52,14 @@
     </div>
 
     <div>
+        
+
                     <!--  for cross <div class="check-logo">&#xd7;</div>  -->
-    <input type="email" name="email" class="register-input input-with-checkbox" placeholder="Email address" required><div class="check-logo">&#x2713;</div>
+    <input type="email" name="email" class="email register-input input-with-checkbox" placeholder="Email address" required><div class="check-logo">&#x2713;</div>
     <!--span style="display: inline"><img height="20px" src="../images/logo.png"/></span--></div>
     <input type="password" name="pass" class="register-input input-with-checkbox" maxlength="8" placeholder="Password" required><div class="check-logo">&#x2713;</div>
     <input type="password" class="register-input input-with-checkbox" maxlength="8" placeholder="Confirm Password" required><div class="check-logo">&#x2713;</div>
-    <input type="submit" name="submit" value="GET STARTED" class="register-button">
+    <input type="submit" disabled="true" name="submit" value="GET STARTED" class="submit register-button">
 </form>
 </div>
 

@@ -50,7 +50,7 @@ $(document).ready(function () {
         username=$('input#username').val();
         password=$('input#password').val();
         animateLoad();
-        $.post('../Login.php',{username:username, password:password},function (data) {
+        $.post('../login.php',{username:username, password:password},function (data) {
             stopAnimateLoad();
             var datas=data.split('!');
             //alert(datas[0]);

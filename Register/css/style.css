@@ -159,16 +159,26 @@ input {
 .register-button:hover{
     box-shadow: #222 0 2px 3px;
 }
-
 .register-button:active {
-    background: #eee;
-    border-color: #c3c3c3 #d1d1d1 #d8d8d8;
-    background-image: -webkit-linear-gradient(top, #eeeeee, #fcfcfc);
-    background-image: -moz-linear-gradient(top, #eeeeee, #fcfcfc);
-    background-image: -o-linear-gradient(top, #eeeeee, #fcfcfc);
-    background-image: linear-gradient(to bottom, #eeeeee, #fcfcfc);
-    -webkit-box-shadow: inset 0 1px rgba(0, 0, 0, 0.03);
-    box-shadow: inset 0 1px rgba(0, 0, 0, 0.03);
+background: #eee;
+border-color: #c3c3c3 #d1d1d1 #d8d8d8;
+background-image: -webkit-linear-gradient(top, #eeeeee, #fcfcfc);
+background-image: -moz-linear-gradient(top, #eeeeee, #fcfcfc);
+background-image: -o-linear-gradient(top, #eeeeee, #fcfcfc);
+background-image: linear-gradient(to bottom, #eeeeee, #fcfcfc);
+-webkit-box-shadow: inset 0 1px rgba(0, 0, 0, 0.03);
+box-shadow: inset 0 1px rgba(0, 0, 0, 0.03);
+}
+
+.register-button:disabled{
+    box-sizing: border-box;
+    padding: 15px 30px;
+    -webkit-box-shadow:inset 0px 0px 0px 2px #fff;
+    -moz-box-shadow:inset 0px 0px 0px 2px #fff;
+    box-shadow:inset 0px 0px 0px 2px #fff;
+    background: #5D92BA;
+    color: white;
+    cursor: default;
 }
 
 .register-button:focus {
