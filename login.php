@@ -9,6 +9,8 @@
 require_once 'functions.php';
 $username="";
 $password="";
+
+//print_r($_POST);
 if(isset($_POST['username']))$username=$_POST['username'];
 if(isset($_POST['password']))$password=$_POST['password'];
 if($username===""|$password===""){
@@ -45,7 +47,7 @@ if($result&&$result->num_rows>0){
     echo '1!';
     echo $username.'!';
     echo $token.'!'.$key;
-    
+
     //echo $_COOKIE['username'];
 
 }else{
