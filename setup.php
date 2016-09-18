@@ -25,6 +25,7 @@ sql("CREATE TABLE IF NOT EXISTS users(
      initialtime TIMESTAMP,
      PRIMARY KEY (id)
      );");
+echo "<br/>".$conn->error."<br/>";
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
@@ -46,6 +47,7 @@ sql("CREATE TABLE IF NOT EXISTS cookiestore(
      longitude DOUBLE,
      PRIMARY KEY (id)
      );");
+echo "<br/>".$conn->error."<br/>";
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
