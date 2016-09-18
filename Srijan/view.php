@@ -23,10 +23,10 @@ require_once 'functions.php';
 			$slotID = $_REQUEST['slotID'];
 			$pID = $_REQUEST['pID'];			
 			$query = "SELECT * from Slots WHERE id='$slotID' AND cap > apps";
-			$num=queryMysql($query)->num_rows;
+			$num=sql($query)->num_rows;
 			if($num > 0)
 			{
-				$result = queryMysql($query);
+				$result = sql($query);
 				$slot=$result->fetch_array(MYSQLI_ASSOC); 
 				$docID = $slot['docID'];
 				$venue = $slot['venue'];
@@ -34,13 +34,13 @@ require_once 'functions.php';
 				$sTime = $slot['sTime'];
 				$eTime = $slot['eTime'];				
 				$status = 2;
-				if(queryMysql("SELECT * from Reviews WHERE docID='$docID' AND pID = '$pID'")->num_rows > 0)
+				if(sql("SELECT * from Reviews WHERE docID='$docID' AND pID = '$pID'")->num_rows > 0)
 				{
 					$status = 1;
 					$appNo = $appNo + 1;
-					queryMysql("UPDATE Slots SET apps = '$appNo' WHERE id='$slotID';");
+					sql("UPDATE Slots SET apps = '$appNo' WHERE id='$slotID';");
 				}
-				queryMysql("INSERT INTO Appointments VALUES(NULL,'$docID','$pID','$appNo','$venue','$status','$sTime','$eTime')");
+				sql("INSERT INTO Appointments VALUES(NULL,'$docID','$pID','$appNo','$venue','$status','$sTime','$eTime')");
 			}
 		}
 		else if($_REQUEST['action'] == "getAppointments" && isset($_REQUEST['docID'])  && $_REQUEST['docID'] != "" && isset($_REQUEST['venue']) && $_REQUEST['venue'] != "")
@@ -62,11 +62,11 @@ require_once 'functions.php';
 			$rating = $_REQUEST['rating'];
 			$comment = $_REQUEST['comment'];						
 			$time = "123345";//get System Time here
-			queryMysql("INSERT INTO Reviews VALUES(NULL,'$docID','$pID','$venue','$rating','$comment','$time')");
+			sql("INSERT INTO Reviews VALUES(NULL,'$docID','$pID','$venue','$rating','$comment','$time')");
 		}
 		if($query != "")
 		{
-			$result = queryMysql($query1);
+			$result = sql($query1);
 			//$num = $result->num_rows;
 			$row=$result->fetch_array(MYSQLI_ASSOC); 
 			echo json_encode($row);

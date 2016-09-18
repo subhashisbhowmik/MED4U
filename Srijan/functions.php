@@ -7,10 +7,10 @@ $connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 if ($connection->connect_error) die($connection->connect_error);
 function createTable($name, $query)
 {
-    queryMysql("CREATE TABLE IF NOT EXISTS $name($query)");
+    sql("CREATE TABLE IF NOT EXISTS $name($query)");
 }
 
-function queryMysql($query)
+function sql($query)
 {
     global $connection;
     $result = $connection->query($query);
