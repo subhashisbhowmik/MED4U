@@ -21,8 +21,8 @@ sql("CREATE TABLE IF NOT EXISTS users(
      email VARCHAR (50),
      latitude DOUBLE,
      longitude DOUBLE,
-     lasttime TIMESTAMP,
-     initialtime TIMESTAMP,
+     lasttime TIMESTAMP NULL DEFAULT NULL,
+     initialtime TIMESTAMP NULL DEFAULT NULL,
      PRIMARY KEY (id)
      );");
 echo "<br/>".$conn->error."<br/>";
@@ -36,9 +36,9 @@ sql("CREATE TABLE IF NOT EXISTS cookiestore(
      username VARCHAR (50) NOT NULL,
      token VARCHAR (256) NOT NULL,
      keyval VARCHAR (256) NOT NULL,
-     inittime TIMESTAMP NOT NULL,
-     starttime TIMESTAMP NOT NULL,
-     lasttime TIMESTAMP NOT NULL,
+     inittime TIMESTAMP NULL DEFAULT NULL,
+     starttime TIMESTAMP NULL DEFAULT NULL,
+     lasttime TIMESTAMP NULL DEFAULT NULL,
      ip  VARCHAR (25),
      info VARCHAR (200),
      active BIT NOT NULL,
