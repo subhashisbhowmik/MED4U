@@ -11,5 +11,6 @@ checkAuth("Logout/");
 //die( $_COOKIE['username']);
 if(isset($_REQUEST['logout']))header("Location: logout/");
 if(!isset($_COOKIE['username'])|$_COOKIE['username']==="")header("Location: Login/");
-echo "Hi ".$_COOKIE['username'];
+//echo "Hi ".$_COOKIE['username'];
 if(isset($_SESSION['started']))echo $_SESSION['started'];
+header("Location: Home");
