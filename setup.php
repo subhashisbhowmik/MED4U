@@ -1,10 +1,10 @@
 <?php
 require_once 'functions.php';
-$reset="0";
-if(isset($_GET['reset']))$reset=$_GET['reset'];
+$reset = "0";
+if (isset($_GET['reset'])) $reset = $_GET['reset'];
 
 
-if($reset==="1") sql('DROP TABLE IF EXISTS `users`;');
+if ($reset === "1") sql('DROP TABLE IF EXISTS `users`;');
 sql("CREATE TABLE IF NOT EXISTS users(
      id   INT UNIQUE NOT NULL AUTO_INCREMENT,
      username VARCHAR (50) UNIQUE NOT NULL,
@@ -25,12 +25,12 @@ sql("CREATE TABLE IF NOT EXISTS users(
      initialtime TIMESTAMP NULL DEFAULT NULL,
      PRIMARY KEY (id)
      );");
-echo "<br/>".$conn->error."<br/>";
+echo "<br/>" . $conn->error . "<br/>";
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if($reset==="1") sql('DROP TABLE IF EXISTS `users`;');
+if ($reset === "1") sql('DROP TABLE IF EXISTS `users`;');
 sql("CREATE TABLE IF NOT EXISTS cookiestore(
      id   INT UNIQUE NOT NULL AUTO_INCREMENT,
      username VARCHAR (50) NOT NULL,
@@ -47,11 +47,11 @@ sql("CREATE TABLE IF NOT EXISTS cookiestore(
      longitude DOUBLE,
      PRIMARY KEY (id)
      );");
-echo "<br/>".$conn->error."<br/>";
+echo "<br/>" . $conn->error . "<br/>";
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-if($reset==="1") sql('DROP TABLE IF EXISTS `slots`;');
+if ($reset === "1") sql('DROP TABLE IF EXISTS `slots`;');
 createTable('slots',
     'id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	      docID INT,
@@ -60,11 +60,11 @@ createTable('slots',
 	      apps INT,
 	      stime INT,
 	      etime INT');
-echo "<br/>".$conn->error."<br/>";
+echo "<br/>" . $conn->error . "<br/>";
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-if($reset==="1") sql('DROP TABLE IF EXISTS `appointments`;');
+if ($reset === "1") sql('DROP TABLE IF EXISTS `appointments`;');
 createTable('appointments',
     'id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	      docID INT,
@@ -74,11 +74,11 @@ createTable('appointments',
 	      status INT,
 	      stime INT,
 	      etime INT');
-echo "<br/>".$conn->error."<br/>";
+echo "<br/>" . $conn->error . "<br/>";
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-if($reset==="1") sql('DROP TABLE IF EXISTS `reviews`;');
+if ($reset === "1") sql('DROP TABLE IF EXISTS `reviews`;');
 createTable('reviews',
     'id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	      docID INT,
@@ -87,13 +87,20 @@ createTable('reviews',
 	      rating INT,
 	      comments VARCHAR(200),
 	      time INT');
-echo "<br/>".$conn->error."<br/>";
+echo "<br/>" . $conn->error . "<br/>";
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if($reset!='1')
-echo "SETUP COMPLETE";
+if ($reset === "1") sql('DROP TABLE IF EXISTS `doctors`');
+createTable('doctors', "`id` INT UNSIGNED NOT NULL AUTO_INCREMENT , `userid` INT UNSIGNED NOT NULL , `certification` VARCHAR(100) NOT NULL , `qualifications` VARCHAR(1000), `specializations` VARCHAR(1000), PRIMARY KEY (`id`), UNIQUE (`userid`), UNIQUE (`certification`) ");
+echo "<br/>" . $conn->error . "<br/>";
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if ($reset != '1')
+    echo "SETUP COMPLETE";
 else echo "RESET COMPLETE";
 
 ?>
