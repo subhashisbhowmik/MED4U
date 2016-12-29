@@ -51,6 +51,46 @@ echo "<br/>".$conn->error."<br/>";
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+if($reset==="1") sql('DROP TABLE IF EXISTS `slots`;');
+createTable('slots',
+    'id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	      docID INT,
+	      venue INT,
+	      cap INT,
+	      apps INT,
+	      stime INT,
+	      etime INT');
+echo "<br/>".$conn->error."<br/>";
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+if($reset==="1") sql('DROP TABLE IF EXISTS `appointments`;');
+createTable('appointments',
+    'id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	      docID INT,
+	      pID int,
+	      appNo INT,
+	      venue INT,
+	      status INT,
+	      stime INT,
+	      etime INT');
+echo "<br/>".$conn->error."<br/>";
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+if($reset==="1") sql('DROP TABLE IF EXISTS `reviews`;');
+createTable('reviews',
+    'id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	      docID INT,
+	      pID INT,
+	      venue INT,
+	      rating INT,
+	      comments VARCHAR(200),
+	      time INT');
+echo "<br/>".$conn->error."<br/>";
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
 if($reset!='1')
 echo "SETUP COMPLETE";

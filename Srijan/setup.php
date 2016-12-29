@@ -1,5 +1,5 @@
 <?php 
-require_once 'functions.php';
+require_once '../functions.php';
 createTable('slots',
 	      'id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	      docID INT,
@@ -26,4 +26,5 @@ createTable('reviews',
 	      comments VARCHAR(200),
 	      time INT');	            
 echo "Done";
+
 ?>

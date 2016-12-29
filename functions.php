@@ -22,6 +22,11 @@ function sql($query = "")
     return $conn->query($query);
 }
 
+function createTable($name, $query)
+{
+    sql("CREATE TABLE IF NOT EXISTS $name($query)");
+}
+
 function isMobile()
 {
     $is_mobile = '0';

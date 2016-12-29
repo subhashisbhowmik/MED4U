@@ -1,5 +1,5 @@
 <?php
-require_once '../functions.php';
+require_once 'functions.php';
 	if(isset($_REQUEST['action']))
 	{
 		$query = "";
