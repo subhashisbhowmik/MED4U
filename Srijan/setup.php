@@ -1,6 +1,6 @@
 <?php 
 require_once 'functions.php';
-/*createTable('Slots',
+createTable('Slots',
 	      'id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	      docID INT,
 	      venue INT,
@@ -24,6 +24,6 @@ createTable('Reviews',
 	      venue INT,
 	      rating INT,
 	      commnets VARCHAR(200),
-	      time INT');	   */         
+	      time INT');	            
 echo "Done";
 ?>
