@@ -86,7 +86,7 @@ createTable('reviews',
 	      venue INT,
 	      rating INT,
 	      comments VARCHAR(200),
-	      time INT');
+	      time TIMESTAMP NULL DEFAULT NULL');
 echo "<br/>" . $conn->error . "<br/>";
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -98,6 +98,30 @@ echo "<br/>" . $conn->error . "<br/>";
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+
+if ($reset === "1") sql('DROP TABLE IF EXISTS `feeds`');
+createTable('feeds','`id` INT NOT NULL AUTO_INCREMENT , `userid` VARCHAR(100) NOT NULL , `context` INT NOT NULL ,`content` VARCHAR(10000) NOT NULL , `likes` INT NOT NULL , `comments` INT NOT NULL , `image` VARCHAR(100) NOT NULL , `timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`id`)');
+echo "<br/>" . $conn->error . "<br/>";
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if ($reset === "1") sql('DROP TABLE IF EXISTS `comments`');
+createTable('comments',' `id` INT NOT NULL AUTO_INCREMENT , `feedid` INT NOT NULL , `parentid` INT NULL DEFAULT NULL , `content` VARCHAR(1000) NOT NULL , `likes` INT NOT NULL , `replies` INT NOT NULL , `image` VARCHAR(100) NOT NULL , `timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`id`)');
+echo "<br/>" . $conn->error . "<br/>";
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if ($reset === "1") sql('DROP TABLE IF EXISTS `docstarred`');
+createTable('docstarred','`id` INT NOT NULL AUTO_INCREMENT , `pid` INT NOT NULL , `docid` INT NOT NULL , PRIMARY KEY (`id`)');
+echo "<br/>" . $conn->error . "<br/>";
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+
+
 
 if ($reset != '1')
     echo "SETUP COMPLETE";
