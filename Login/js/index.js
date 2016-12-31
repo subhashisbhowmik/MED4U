@@ -51,7 +51,7 @@ $(document).ready(function () {
         password=$('input#password').val();
         animateLoad();
         $.post('../login.php',{username:username, password:password},function (data) {
-            stopAnimateLoad();
+            // stopAnimateLoad();
             var datas=data.split('!');
             //alert(datas[0]);
             if(datas[0]==1){
@@ -63,6 +63,7 @@ $(document).ready(function () {
             }else if(datas[0]==0){
                 //alert("Wrong info");
                 //wrong();
+                stopAnimateLoad();
                 $('input').switchClass('input-txt','input-txt-error',100);
                 var $warning=$('.warning');
                 $warning.html('<strong>Invalid Username or Password</strong>');
