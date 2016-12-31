@@ -78,7 +78,7 @@ function checkAuth($path)
     if (isset($_COOKIE['token'])) $token = $_COOKIE['token'];
     if (isset($_COOKIE['key'])) $key = $_COOKIE['key'];
     //print_r($_COOKIE);
-    echo "<br/>";
+    //echo "<br/>";
     if ($username != "" && $token != "" && $key != "") {
         $result = sql("SELECT * FROM `cookiestore` WHERE username='$username' AND token='$token' AND keyval='$key' AND  closed=0");
         if ($result && $result->num_rows > 0) {

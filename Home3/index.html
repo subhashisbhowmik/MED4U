@@ -20,7 +20,7 @@ if (isset($_SESSION['started'])) echo $_SESSION['started'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0 ,user-scalable=no">
     <link rel="stylesheet" href="s.css">
     <link rel="stylesheet" href="header-styles.css">
-    <title>MED4U- Home</title>
+    <title>MED4U</title>
 </head>
 <body>
 <div id="preloader">
@@ -68,151 +68,159 @@ if (isset($_SESSION['started'])) echo $_SESSION['started'];
     <div id="wrapper">
 
         <div class="item" id="i1" style="background-color:#3cb2c6 !important;">
-            <div align="center" class="tile_icon"><img src="../SVG/phone-contact.svg"/> </div>
-            <button class="tileClose">&#x2715;</button>
-            <div class="item_content"></div>
-            <div class="text"><p>APPOINTMENTS</p></div>
+            <div class="tileClose">&#x2715;</div>
+                <div class="tile_icon"><img src="../SVG/phone-contact.svg"/> </div>
+                <div class="tileTitle">APPOINTMENTS</div>
         </div>
+
+
+
+
         <div class="item" id="i2" style="background-color:#b2cf1e !important;">
-            <div align="center" class="tile_icon"><img src="../SVG/phonendoscope.svg"/> </div>
-            <button class="tileClose">&#x2715;</button>
-            <div class="item_content"></div>
-            <div class="text"><p>DOCTORS</p></div>
+            <div class="tileClose">&#x2715;</div>
+            <div align="center" class="tile_icon">
+                <img src="../SVG/phonendoscope.svg"/>
+            </div>
+            <div class="tileTitle">
+                DOCTORS
+            </div>
+            <div class="tileIframeWrapper">
+                <iframe class="tileIframe" src="../docs_frame/docs.html"></iframe> 
+            </div>
+
         </div>
         <div class="item" id="i3" style="background-color:#62615f !important;">
+            <div class="tileClose">&#x2715;</div>
             <div align="center" class="tile_icon"><img src="../SVG/verification-of-delivery-list-clipboard-symbol.svg"/> </div>
-            <div class="text"></div>
-            <button class="tileClose">&#x2715;</button>
+            <div class="tileTitle">PRESCRIPTION</div>
             <div class="item_content"></div>
-            <div class="text"><p>PRESCRIPTION</p></div>
         </div>
         <div class="item" id="i4" style="background-color:#424b5a !important;">
+            <div class="tileClose">&#x2715;</div>
             <div align="center" class="tile_icon"><img src="../SVG/pill.svg"/> </div>
-            <div class="text"></div>
-            <button class="tileClose">&#x2715;</button>
+            <div class="tileTitle">MEDICINES</div>
             <div class="item_content"></div>
-            <div class="text"><p>MEDICINES</p></div>
         </div>
         <div class="item" id="i5" style="background-color:#2abab3 !important;">
+            <div class="tileClose">&#x2715;</div>
             <div align="center" class="tile_icon"><img src="../SVG/history-clock-button.svg"/> </div>
-            <div class="text"></div>
-            <button class="tileClose">&#x2715;</button>
+            
+            <div class="tileTitle">HISTORY</div>
+
             <div class="item_content"></div>
-            <div class="text"><p>HISTORY</p></div>
         </div>
         <div class="item" id="i6" style="background-color:#f7644e !important;">
+            <div class="tileClose">&#x2715;</div>
             <div align="center" class="tile_icon"><img src="../SVG/first-aid-kit.svg"/> </div>
-            <div class="text"></div>
-            <button class="tileClose">&#x2715;</button>
+            
+            
+            <div class="tileTitle">MED FARMS</div>
             <div class="item_content"></div>
-            <div class="text"><p>MED FARMS</p></div>
         </div>
         <div class="item" id="i7" style="background-color:#edb22b !important;">
+            <div class="tileClose">&#x2715;</div>
             <div align="center" class="tile_icon"><img src="../SVG/hospital-building.svg"/> </div>
-            <div class="text"></div>
-            <button class="tileClose">&#x2715;</button>
+            <div class="tileTitle">HOSPITALS</div>
             <div class="item_content"></div>
-            <div class="text"><p>HOSPITALS</p></div>
         </div>
         <div class="item" id="i8" style="background-color:#9b69e9 !important;">
+            <div class="tileClose">&#x2715;</div>
             <div align="center" class="tile_icon"><img src="../SVG/ambulance.svg"/> </div>
-            <div class="text"></div>
-            <button class="tileClose">&#x2715;</button>
+            <div class="tileTitle">EMERGENCY</div>
             <div class="item_content"></div>
-            <div class="text"><p>EMERGENCY</p></div>
+            
         </div>
         <div class="item" id="i9" style="background-color:#1079af !important;">
+            <div class="tileClose">&#x2715;</div>
             <div align="center" class="tile_icon"><img src="../SVG/settings.svg"/> </div>
-            <div class="text"></div>
-            <button class="tileClose">&#x2715;</button>
+            <div class="tileTitle">SETTINGS</div>
             <div class="item_content"></div>
-            <div class="text"><p>SETTINGS</p></div>
         </div>
     </div><!--items list end-->
 
 
-    <div id="feed-peek">
+    <div id="feed_box">
         <div class="feed">
-            <div class="feed-header"><a href="#">Feed Header text</a></div>
-            <div class="feed-content">
+            <div class="feed_header"><a href="#">Feed Header text</a></div>
+            <div class="feed_content">
                 fekj adnjk adadad a adkjad adakjdjk fgk kbj b evkv evev jke v vev
             </div>
         </div>
         <div class="feed">
-            <div class="feed-header"><a href="#">Feed Header text</a></div>
-            <div class="feed-content">
+            <div class="feed_header"><a href="#">Feed Header text</a></div>
+            <div class="feed_content">
                 jhjyajyuuahmja djadjhj yajyuuahmjadj adjhjy ajyuuahmjadjadjhj yajyuuahmjadjad
             </div>
         </div>
         <div class="feed">
-            <div class="feed-header"><a href="#">Feed Header text</a></div>
-            <div class="feed-content">
+            <div class="feed_header"><a href="#">Feed Header text</a></div>
+            <div class="feed_content">
                 jhjyajyuuahmja djadjhj yajyuuahmjadj adjhjy ajyuuahmjadjadjhj yajyuuahmjadjad
             </div>
         </div>
         <div class="feed">
-            <div class="feed-header"><a href="#">Feed Header text</a></div>
-            <div class="feed-content">
+            <div class="feed_header"><a href="#">Feed Header text</a></div>
+            <div class="feed_content">
                 jhjyajyuuahmja djadjhj yajyuuahmjadj adjhjy ajyuuahmjadjadjhj yajyuuahmjadjad
             </div>
         </div>
         <div class="feed">
-            <div class="feed-header"><a href="#">Feed Header text</a></div>
-            <div class="feed-content">
+            <div class="feed_header"><a href="#">Feed Header text</a></div>
+            <div class="feed_content">
                 jhjyajyuuahmjadj adjhjyajyuua hmjadjadjhjya jyuuahmjadjadjh jyajyuuahmjadjad
             </div>
         </div>
         <div class="feed">
-            <div class="feed-header"><a href="#">Feed Header text</a></div>
-            <div class="feed-content">
+            <div class="feed_header"><a href="#">Feed Header text</a></div>
+            <div class="feed_content">
                 jhjyajyuuahmja djadjhjyajy uuahmjadjadjh jyajyuuah mjadja dj h j y ajyu uahmjadjad
             </div>
         </div>
         <div class="feed">
-            <div class="feed-header"><a href="#">Feed Header text</a></div>
-            <div class="feed-content">
+            <div class="feed_header"><a href="#">Feed Header text</a></div>
+            <div class="feed_content">
                 jhjy ajyuua hmjadja djhjyaj yuuahmjad jadjhjy ajyuuahmj adjadjhjy ajyuua hmjadjad
             </div>
         </div>
         <div class="feed">
-            <div class="feed-header"><a href="#">Feed Header text</a></div>
-            <div class="feed-content">
+            <div class="feed_header"><a href="#">Feed Header text</a></div>
+            <div class="feed_content">
                 jhjy ajyuua hmjadja djhjyaj yuuahmjad jadjhjy ajyuuahmj adjadjhjy ajyuua hmjadjad
             </div>
         </div>
         <div class="feed">
-            <div class="feed-header"><a href="#">Feed Header text</a></div>
-            <div class="feed-content">
+            <div class="feed_header"><a href="#">Feed Header text</a></div>
+            <div class="feed_content">
                 jhjy ajyuua hmjadja djhjyaj yuuahmjad jadjhjy ajyuuahmj adjadjhjy ajyuua hmjadjad
             </div>
         </div>
         <div class="feed">
-            <div class="feed-header"><a href="#">Feed Header text</a></div>
-            <div class="feed-content">
+            <div class="feed_header"><a href="#">Feed Header text</a></div>
+            <div class="feed_content">
                 jhjy ajyuua hmjadja djhjyaj yuuahmjad jadjhjy ajyuuahmj adjadjhjy ajyuua hmjadjad
             </div>
         </div>
         <div class="feed">
-            <div class="feed-header"><a href="#">Feed Header text</a></div>
-            <div class="feed-content">
+            <div class="feed_header"><a href="#">Feed Header text</a></div>
+            <div class="feed_content">
                 jhjy ajyuua hmjadja djhjyaj yuuahmjad jadjhjy ajyuuahmj adjadjhjy ajyuua hmjadjad
             </div>
         </div>
         <div class="feed">
-            <div class="feed-header"><a href="#">Feed Header text</a></div>
-            <div class="feed-content">
+            <div class="feed_header"><a href="#">Feed Header text</a></div>
+            <div class="feed_content">
                 jhjy ajyuua hmjadja djhjyaj yuuahmjad jadjhjy ajyuuahmj adjadjhjy ajyuua hmjadjad
             </div>
         </div>
         <div class="feed">
-            <div class="feed-header"><a href="#">Feed Header text</a></div>
-            <div class="feed-content">
+            <div class="feed_header"><a href="#">Feed Header text</a></div>
+            <div class="feed_content">
                 jhjy ajyuua hmjadja djhjyaj yuuahmjad jadjhjy ajyuuahmj adjadjhjy ajyuua hmjadjad
             </div>
         </div>
         <div class="feed">
-            <div class="feed-header"><a href="#">Feed Header text</a></div>
-            <div class="feed-content">
+            <div class="feed_header"><a href="#">Feed Header text</a></div>
+            <div class="feed_content">
                 jhjy ajyuua hmjadja djhjyaj yuuahmjad jadjhjy ajyuuahmj adjadjhjy ajyuua hmjadjad
             </div>
         </div>

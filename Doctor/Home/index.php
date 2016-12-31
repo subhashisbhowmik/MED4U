@@ -5,12 +5,12 @@
  * Date: 29-08-2016
  * Time: 02:42
  */
-require_once '../functions.php';
-checkAuth("../Logout/");
+require_once '../../functions.php';
+checkAuth("../../Logout/");
 
-if (isset($_REQUEST['logout'])) header("Location: ../Logout/");
-if (!isset($_COOKIE['username']) | $_COOKIE['username'] === "") header("Location: ../Login/");
-if (isset($_SESSION['started'])) echo $_SESSION['started'];
+if (isset($_REQUEST['logout'])) header("Location: ../../Logout/");
+if (!isset($_COOKIE['username']) | $_COOKIE['username'] === "") header("Location: ../../Login/");
+//if (isset($_SESSION['started'])) echo $_SESSION['started'];
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +20,7 @@ if (isset($_SESSION['started'])) echo $_SESSION['started'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0 ,user-scalable=no">
     <link rel="stylesheet" href="s.css">
     <link rel="stylesheet" href="header-styles.css">
-    <title>MED4U- Home</title>
+    <title>MED4U- Doctor's Home</title>
 </head>
 <body>
 <div id="preloader">
@@ -68,61 +68,61 @@ if (isset($_SESSION['started'])) echo $_SESSION['started'];
     <div id="wrapper">
 
         <div class="item" id="i1" style="background-color:#3cb2c6 !important;">
-            <div align="center" class="tile_icon"><img src="../SVG/phone-contact.svg"/> </div>
+            <div align="center" class="tile_icon"><img src="../../SVG/phone-contact.svg"/> </div>
             <button class="tileClose">&#x2715;</button>
             <div class="item_content"></div>
             <div class="text"><p>APPOINTMENTS</p></div>
         </div>
         <div class="item" id="i2" style="background-color:#b2cf1e !important;">
-            <div align="center" class="tile_icon"><img src="../SVG/phonendoscope.svg"/> </div>
+            <div align="center" class="tile_icon"><img src="../../SVG/phonendoscope.svg"/> </div>
             <button class="tileClose">&#x2715;</button>
             <div class="item_content"></div>
             <div class="text"><p>DOCTORS</p></div>
         </div>
         <div class="item" id="i3" style="background-color:#62615f !important;">
-            <div align="center" class="tile_icon"><img src="../SVG/verification-of-delivery-list-clipboard-symbol.svg"/> </div>
+            <div align="center" class="tile_icon"><img src="../../SVG/verification-of-delivery-list-clipboard-symbol.svg"/> </div>
             <div class="text"></div>
             <button class="tileClose">&#x2715;</button>
             <div class="item_content"></div>
             <div class="text"><p>PRESCRIPTION</p></div>
         </div>
         <div class="item" id="i4" style="background-color:#424b5a !important;">
-            <div align="center" class="tile_icon"><img src="../SVG/pill.svg"/> </div>
+            <div align="center" class="tile_icon"><img src="../../SVG/pill.svg"/> </div>
             <div class="text"></div>
             <button class="tileClose">&#x2715;</button>
             <div class="item_content"></div>
             <div class="text"><p>MEDICINES</p></div>
         </div>
         <div class="item" id="i5" style="background-color:#2abab3 !important;">
-            <div align="center" class="tile_icon"><img src="../SVG/history-clock-button.svg"/> </div>
+            <div align="center" class="tile_icon"><img src="../../SVG/history-clock-button.svg"/> </div>
             <div class="text"></div>
             <button class="tileClose">&#x2715;</button>
             <div class="item_content"></div>
             <div class="text"><p>HISTORY</p></div>
         </div>
         <div class="item" id="i6" style="background-color:#f7644e !important;">
-            <div align="center" class="tile_icon"><img src="../SVG/first-aid-kit.svg"/> </div>
+            <div align="center" class="tile_icon"><img src="../../SVG/first-aid-kit.svg"/> </div>
             <div class="text"></div>
             <button class="tileClose">&#x2715;</button>
             <div class="item_content"></div>
             <div class="text"><p>MED FARMS</p></div>
         </div>
         <div class="item" id="i7" style="background-color:#edb22b !important;">
-            <div align="center" class="tile_icon"><img src="../SVG/hospital-building.svg"/> </div>
+            <div align="center" class="tile_icon"><img src="../../SVG/hospital-building.svg"/> </div>
             <div class="text"></div>
             <button class="tileClose">&#x2715;</button>
             <div class="item_content"></div>
             <div class="text"><p>HOSPITALS</p></div>
         </div>
         <div class="item" id="i8" style="background-color:#9b69e9 !important;">
-            <div align="center" class="tile_icon"><img src="../SVG/ambulance.svg"/> </div>
+            <div align="center" class="tile_icon"><img src="../../SVG/ambulance.svg"/> </div>
             <div class="text"></div>
             <button class="tileClose">&#x2715;</button>
             <div class="item_content"></div>
             <div class="text"><p>EMERGENCY</p></div>
         </div>
         <div class="item" id="i9" style="background-color:#1079af !important;">
-            <div align="center" class="tile_icon"><img src="../SVG/settings.svg"/> </div>
+            <div align="center" class="tile_icon"><img src="../../SVG/settings.svg"/> </div>
             <div class="text"></div>
             <button class="tileClose">&#x2715;</button>
             <div class="item_content"></div>
