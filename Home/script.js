@@ -1,42 +1,44 @@
 $(document).ready(function () {
-	// for (i = 0; i < 9; i++)
-	// {	fill(i);	}
+	
+    $("#preloader").delay(1000).fadeOut(250);
 var canOpen = true;
 $('div.item').click(function () {
     if (canOpen) {
-        
+       
         var x = $(this).offset().left;
         var y = $(this).offset().top;
         $(this).clone(true).insertAfter($(this));
         $(this).css({position: 'absolute'});
         $(this).offset({top: y, left: x});
         $(this).attr("tx", $(this).css("left")).attr("ty", $(this).css("top"));
-        $(this).attr('class', 'itemx');
-        $(this).addClass('itemx');
+        $(this).addClass('itemx').css({"cursor":"default","backgroundColor":"#888"});
         $(this).animate({left: '1%'},0).animate({top: '1%'},0);
         $(this).find('.tileClose').show();
-			$(this).find('.item_content').show(150);	
-			canOpen = false;
+        $(this).find('.tile_icon').addClass('activeIcon');
+        $(this).find('.tileIframeWrapper').fadeIn(200);
         
+        canOpen = false;
     }
 });
 
-$('button.tileClose').click(function (e) {
-    
-		$(this).parent().find('.item_content').hide(50);
-		$(this).hide();
+$('.tileClose').click(function (e) {
+        $(this).parent().find('.tileIframeWrapper').fadeOut(100);
+        //$(this).parent().find('.item_content').hide();
+        $(this).hide();
     e.stopPropagation();
-    $p = $(this).parent().animate({left: $(this).attr("tx")},0).animate($(this).attr("ty"),0);
-		
-    $(this).parent().attr("class", "item").css({position: 'absolute'});
+    $p = $(this).parent().removeClass('itemx');
+        
+    $(this).parent().attr("class", "item");
     $p.fadeOut({
-        duration: 40,
+        duration:30,
         complete: function () {
             $p.remove();
             canOpen = true;
         }
     });
 });
+
+
 });
 function fill(Id)
 {
@@ -55,10 +57,3 @@ function fill(Id)
 	});
 }
 
-document.onreadystatechange = function () {
-  if (document.readyState == "interactive") {
-        setTimeout(function(){
-            document.getElementById("preloader").style.display="none";
-        },700);
-  }
-}

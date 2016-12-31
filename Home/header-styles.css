@@ -43,7 +43,7 @@ html{overflow-x:hidden !important;}
     display: block;
     position: fixed !important;
     background-color: #e57373;
-    z-index: 2 !important;
+    z-index: 0 !important;
     box-sizing: border-box;
     font-size: 1em;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -88,7 +88,7 @@ html{overflow-x:hidden !important;}
      transition: 0.2s; 
      margin-top:5px;
      text-align: left;
-    z-index: 2000 !important;
+    z-index: 1000 !important;
     position: fixed;
     top:0;
     left: 25vw;
@@ -112,7 +112,7 @@ html{overflow-x:hidden !important;}
 	left:0 !important;
 	height:45px !important;
 	top:0 !important;
-	z-index: 3000 !important;
+	z-index: 1000 !important;
 }
 #search-close{
 	height:100%;
