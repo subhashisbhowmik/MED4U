@@ -34,7 +34,7 @@ $result = sql("SELECT * FROM `docstarred` WHERE `pid`='$pid'");
     </div>
     <div id="starredDocsWrapper">
         <?php
-
+        
         foreach ($result as $row) {
             $docid = $row['docid'];
             $res = sql("SELECT * FROM `doctors` WHERE `id`='$docid'")->fetch_assoc();
@@ -43,19 +43,28 @@ $result = sql("SELECT * FROM `docstarred` WHERE `pid`='$pid'");
             $docuserid = $res['userid'];
             $details = sql("SELECT *FROM `users` WHERE `id`='$docuserid'")->fetch_assoc();
             $name = $details['firstname'] . " " . $details['lastname'];
+            $icon="./doc_icon.svg";
+            if(file_exists("../dp/user/$docuserid".".jpg")) $icon="../dp/user/$docuserid".".jpg";
+            if(file_exists("../dp/user/$docuserid".".jpeg")) $icon="../dp/user/$docuserid".".jpeg";
+            if(file_exists("../dp/user/$docuserid".".png")) $icon="../dp/user/$docuserid".".png";
+            if(file_exists("../dp/doc/$docid".".jpg")) $icon="../dp/doc/$docid".".jpg";
+            if(file_exists("../dp/doc/$docid".".jpeg")) $icon="../dp/doc/$docid".".jpeg";
+            if(file_exists("../dp/doc/$docid".".png")) $icon="../dp/doc/$docid".".png";
+
             echo '<div class="starredDocs">';
-            echo '<div class="strDocPic"><img src="./doc_icon.svg"/></div>';
+            echo '<div class="strDocPic"><img src="'.$icon.'"/></div>';
+            echo '<div class="strDocCardRight">';
             echo '<div class="strDocName">'.$name.'</div>';
             echo '<div class="strDocInfo">'.$qualifications.'<br/>'.$specializations.'</div>';
 //            echo '<div class="strDocInfo">'.$specializations.'</div>';
-            echo '</div>';
+            echo '</div></div>';
         }
         ?>
     </div>
     <div id="searchDiv">
         <div id="searchBox">
             <button id="searchBtn"><img src="./search-icon.svg"/></button>
-            <input id="searchInput" type="text" name="input0" placeholder="search doctors"/>
+            <input id="searchInput" type="text" name="input0" placeholder="Search Doctors"/>
         </div>
         <div id="searchFilter">
             <div class="filterOption">FilterOpt</div>

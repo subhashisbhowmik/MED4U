@@ -50,6 +50,7 @@ $(document).ready(function () {
         username=$('input#username').val();
         password=$('input#password').val();
         animateLoad();
+        var done=0;
         $.post('../login.php',{username:username, password:password},function (data) {
             // stopAnimateLoad();
             var datas=data.split('!');
@@ -59,6 +60,7 @@ $(document).ready(function () {
                 //alert("1");
                 Cookies("token", datas[2], { expires : 30 });
                 Cookies("key", datas[3], { expires : 30 });
+                done=1;
                 window.location.replace("../");
             }else if(datas[0]==0){
                 //alert("Wrong info");
@@ -71,7 +73,8 @@ $(document).ready(function () {
 
             }
         }).always(function () {
-            stopAnimateLoad();
+            if(done==0)
+                stopAnimateLoad();
             //.addClass('input-txt-error').removeClass('input-txt');//.switchClass('input-txt','input-txt-error',100);
             //$('input').toggle().toggle();
         });
