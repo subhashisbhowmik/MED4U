@@ -85,9 +85,11 @@ function checkAuth($path)
             $id = $result->fetch_assoc();
             if ($result->num_rows > 1) {
                 //TODO:Take proper action
+                return 0;
             } else {
                 if (isset($_SESSION['started']) && $_SESSION['started'] == 1) {
                     //TODO: If there is anything to modify in a live session
+                    return 1;
                 } else if ($id['active'] == 1) {
 
                     $newKey = randomString(256);
@@ -98,11 +100,13 @@ function checkAuth($path)
                     sql("UPDATE `cookiestore` SET closed=1 WHERE username='$username' AND token='$token' AND closed=0");
                     sql("INSERT INTO  `cookiestore` (username,token,keyval,inittime,lasttime,ip,active,closed) VALUES ('$username','$token','$newKey','$inittime',CURRENT_TIMESTAMP,'$ip',1,0)");
                     $_SESSION['started'] = 1;
+                    return 1;
                     //echo "INSERT INTO  `cookiestore` (username,token,keyval,inittime,lasttime,ip,active,closed) VALUES ('$username','$token','$newKey','$inittime',CURRENT_TIMESTAMP,'$ip',1,0)";
                 } else {
 
                     clearAllCookies();
                     session_destroy();
+                    if($path=="")return 0;
                     header("Location: " . $path);
                 }
             }
@@ -115,11 +119,13 @@ function checkAuth($path)
             }
             clearAllCookies();
             session_destroy();
+            if($path=="")return 0;
             header("Location: " . $path);
         }
     } else {
         clearAllCookies();
         session_destroy();
+        if($path=="")return 0;
         header("Location: " . $path);
     }
 }
