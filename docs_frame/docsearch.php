@@ -33,7 +33,8 @@ $doctors=array();
 foreach($r as $row){
 //    print_r($row);
 //    echo '<br/>';
-    $doctor=array('docid'=>$row['doc_id'],'name'=>$row['firstname'].' '.$row['lastname'],'phone'=>$row['phone'],'email'=>$row['email'],'qualifications'=>$row['qualifications'],'specializations'=>$row['specializations'],'others'=>'');
+    $icon=dpLink($row['doc_id'], $row['user_id']);
+    $doctor=array('docid'=>$row['doc_id'],'name'=>$row['firstname'].' '.$row['lastname'],'phone'=>$row['phone'],'email'=>$row['email'],'qualifications'=>$row['qualifications'],'specializations'=>$row['specializations'],'icon'=>$icon,'others'=>'');
     array_push($doctors,$doctor);
 }
 $out=json_encode($doctors);

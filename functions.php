@@ -182,6 +182,16 @@ function decode($str)
     return $result;
 }
 
+function dpLink($docuserid, $docid){
+    $icon = "./doc_icon.svg";
+    if (file_exists("../dp/user/$docuserid" . ".jpg")) $icon = "../dp/user/$docuserid" . ".jpg";
+    if (file_exists("../dp/user/$docuserid" . ".jpeg")) $icon = "../dp/user/$docuserid" . ".jpeg";
+    if (file_exists("../dp/user/$docuserid" . ".png")) $icon = "../dp/user/$docuserid" . ".png";
+    if (file_exists("../dp/doc/$docid" . ".jpg")) $icon = "../dp/doc/$docid" . ".jpg";
+    if (file_exists("../dp/doc/$docid" . ".jpeg")) $icon = "../dp/doc/$docid" . ".jpeg";
+    if (file_exists("../dp/doc/$docid" . ".png")) $icon = "../dp/doc/$docid" . ".png";
+    return $icon;
+}
 //echo decode(encode("Hi! It's me.\n<br>"));
 //echo encode("Hi! It's me.\n<br>");
 
