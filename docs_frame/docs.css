@@ -103,6 +103,7 @@ ul, li, a {
     height: 130px;
     display: inline-block;
     color: white;
+    cursor: pointer;
     box-sizing: border-box;
     text-decoration: none;
     border-radius: 3px;
@@ -111,6 +112,14 @@ ul, li, a {
     overflow-wrap: break-word;
     overflow: hidden;
     margin-right: 10px;
+    transition: all 0.1s ease-in-out;
+}
+.starredDocs:hover{
+    -webkit-filter: saturate(110%) brightness(110%);
+    -moz-filter: saturate(110%) brightness(110%);
+    -o-filter: saturate(110%) brightness(110%);
+    filter: saturate(110%) brightness(110%);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.10), 0 1px 5px 0 rgba(0, 0, 0, 0.22);
 }
 .strDocPic{
     height: 100%;
@@ -259,8 +268,7 @@ ul, li, a {
     box-sizing: border-box;
     white-space: nowrap;
     width: 96%;
-    margin:0 auto;
-    margin-top: 15px;
+    margin:15px auto auto;
 }
 
 #noResult{

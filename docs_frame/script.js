@@ -11,12 +11,12 @@ $(document).ready(function () {
     // alert();
     $searchIn.focusin(function () {
         $starholder.hide('fast');
-        $starredHeader.hide('fast');
+        $starredHeader.slideUp('fast');
     });
     $searchIn.focusout(function () {
         if ($searchIn.val() == "") {
             $starholder.show('fast');
-            $starredHeader.show('fast');
+            $starredHeader.slideDown('fast');
         }
     });
 
