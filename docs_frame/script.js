@@ -3,37 +3,52 @@ $(document).ready(function () {
     var $searchIn = $('input#searchInput');
     var timer;
     var post;
-    var $results=$('#searchResults');
-    var $dummy=$('#dummy>.starredDocs');
+    var $results = $('#searchResults');
+    var $dummy = $('#dummy>.starredDocs');
+    var $starholder = $('#starredDocsWrapper');
+    var $starredHeader = $('#staredHeader');
+    var $noresult = $('#noResult');
+    // alert();
+    $searchIn.focusin(function () {
+        $starholder.hide('fast');
+        $starredHeader.hide('fast');
+    });
+    $searchIn.focusout(function () {
+        if ($searchIn.val() == "") {
+            $starholder.show('fast');
+            $starredHeader.show('fast');
+        }
+    });
+
     function sendSearchReq() {
         timer = setTimeout(function () {
             var v = $searchIn.val();
-            if (v != "" && done != 0) {
+            if (v == "") {
+                $noresult.hide();
+            } else if (v != "" && done != 0) {
                 done = 0;
-                post=$.post('./docsearch.php', {search: v}, function (data) {
+                post = $.post('./docsearch.php', {search: v}, function (data) {
                     if (data == "0") window.location.replace("../Login/");
-                    else{
-                        var docs=JSON.parse(data);
-                        if(docs.length==0)console.log('No results found.');
-                        else{
-                            // console.log(docs);
-                            for(var i=0;i<docs.length;i++){
-                                var doc=docs[i];
-                                // console.log(doc.name);
-                                $results.html("");
-                                var clone=$dummy.clone(true);
-                                clone.find('img').attr('src',doc.icon);
+                    else {
+                        $results.html("");
+                        var docs = JSON.parse(data);
+                        if (docs.length == 0) {
+                            $noresult.show();
+                        }
+                        else {
+                            $noresult.hide();
+                            for (var i = 0; i < docs.length; i++) {
+                                var doc = docs[i];
+                                var clone = $dummy.clone(true);
+                                clone.find('img').attr('src', doc.icon);
                                 clone.find('.strDocName').html(doc.name);
-                                clone.find('.strDocInfo').html(doc.qualifications+'<br/>'+doc.specializations+'<br/>'+doc.phone+'<br/>'+doc.email)
+                                clone.find('.strDocInfo').html(doc.qualifications + '<br/>' + doc.specializations + '<br/>' + doc.phone + '<br/>' + doc.email)
                                 clone.appendTo($results);
                             }
-                            //     var name=doc.name;
-                            //     console.log(doc);
-                            // }
                         }
                     }
                 }).always(function () {
-                    done=1;
+                    done = 1;
                 });
             }
         }, 800);
@@ -42,9 +57,9 @@ $(document).ready(function () {
     $searchIn.on('input', function () {
         // alert($searchIn.val());
         clearTimeout(timer);
-        if(post!=null)
-        post.abort();
-        done=1;
+        if (post != null)
+            post.abort();
+        done = 1;
         // alert('Change');
         sendSearchReq();
     });
