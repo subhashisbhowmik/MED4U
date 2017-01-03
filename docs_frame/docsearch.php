@@ -13,10 +13,10 @@ if(isset($_REQUEST['search']))$words=$_REQUEST['search'];
 $words = preg_replace("![^a-z0-9]+!i", " ", $words);
 $words=strtolower($words);
 $wordlist=explode(" ",$words);
-//print_r($wordlist);
 //TODO: JOIN Chambers, Hospitals etc, add more to the OR queue
 $q="SELECT *, `users`.`id` AS `user_id`, `doctors`.`id` AS `doc_id` FROM `doctors` JOIN `users` ON `userid`=`users`.`id` WHERE ";
 foreach($wordlist as $word){
+    if($word==" "||$word=="") continue;
     $q.="LOWER(`qualifications`) LIKE '%$word%' OR ";
     $q.="LOWER(`specializations`) LIKE '%$word%' OR ";
     $q.="LOWER(`firstname`) LIKE '%$word%' OR ";
