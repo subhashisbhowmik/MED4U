@@ -4,10 +4,11 @@ $(document).ready(function () {
     var timer;
     var post;
     var $results = $('#searchResults');
-    var $dummy = $('#dummy>.starredDocs');
+    var $dummy = $('#dummy>.searchedDoc');
     var $starholder = $('#starredDocsWrapper');
     var $starredHeader = $('#staredHeader');
     var $noresult = $('#noResult');
+    console.log($dummy);
     // alert();
     var l = window.top.location.href;
     // var url=loc.substr(0,loc.indexOf('#'));
@@ -49,12 +50,15 @@ $(document).ready(function () {
                 else {
                     $noresult.hide();
                     for (var i = 0; i < docs.length; i++) {
-                        var doc = docs[i];
-                        var clone = $dummy.clone(true);
-                        clone.find('img').attr('src', doc.icon);
-                        clone.find('.strDocName').html(doc.name);
-                        clone.find('.strDocInfo').html(doc.qualifications + '<br/>' + doc.specializations + '<br/>' + doc.phone + '<br/>' + doc.email)
-                        clone.appendTo($results);
+                        var x=1;  //TODO: Remove this while loop, for testing only.
+                        // x=3;
+                        while(x--){
+                            var doc = docs[i];
+                            var clone = $dummy.clone(true);
+                            clone.find('img').attr('src', doc.icon);
+                            clone.find('.searchedDocName').html(doc.name);
+                            clone.find('.searchedDocInfo').html(doc.qualifications + '<br/>' + doc.specializations + '<br/>' + doc.phone + '<br/>' + doc.email)
+                            clone.appendTo($results);}
                     }
                 }
             }
@@ -69,42 +73,7 @@ $(document).ready(function () {
             if (v == "") {
                 $noresult.hide();
             } else if (v != "" && done != 0) {
-                done = 0;
-                post = $.post('./docsearch.php', {search: v}, function (data) {
-                    if (data == "0") window.location.replace("../Login/");
-                    else {
-                        // location.hash+="#search="+v;
-                        // location.hash="";
-                        var loc = window.top.location.href;
-                        var url = loc.substr(0, loc.indexOf('#'));
-                        var dat = loc.substr(loc.indexOf('#') + 1);
-
-                        console.log(dat);
-                        if (dat.indexOf('#') != -1)
-                            dat = dat.substr(0, dat.indexOf('#'));
-                        console.log(dat);
-
-                        window.top.location.href = encodeURI(url + '#' + dat + "#search=" + v);
-                        $results.html("");
-                        var docs = JSON.parse(data);
-                        if (docs.length == 0) {
-                            $noresult.show();
-                        }
-                        else {
-                            $noresult.hide();
-                            for (var i = 0; i < docs.length; i++) {
-                                var doc = docs[i];
-                                var clone = $dummy.clone(true);
-                                clone.find('img').attr('src', doc.icon);
-                                clone.find('.strDocName').html(doc.name);
-                                clone.find('.strDocInfo').html(doc.qualifications + '<br/>' + doc.specializations + '<br/>' + doc.phone + '<br/>' + doc.email)
-                                clone.appendTo($results);
-                            }
-                        }
-                    }
-                }).always(function () {
-                    done = 1;
-                });
+                sendPost(v);
             }
         }, 800);
     }
