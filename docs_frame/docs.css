@@ -219,7 +219,6 @@ ul, li, a {
     color: #222;
     z-index: inherit !important;
     font-size: 1em;
-    transition: 0.2s; 
     outline: none;
 }
 
@@ -265,7 +264,9 @@ ul, li, a {
     box-sizing: border-box;
     white-space: nowrap;
     width: 96%;
-    margin:15px auto auto;
+    margin:15px auto 0;
+    overflow:auto;
+    height: calc(100% - 65px);
 }
 
 #noResult{

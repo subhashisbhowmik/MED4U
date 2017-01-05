@@ -22,7 +22,7 @@ $(document).ready(function () {
         srch = decodeURI(srch).toString();
         $searchIn.val(srch);
         $searchIn.get(0).focus();
-        sendPost(srch);
+        sendPost(srch,false);
         $starholder.hide('fast');
         $starredHeader.slideUp('fast');
     }
@@ -37,8 +37,20 @@ $(document).ready(function () {
         }
     });
 
-    function sendPost(v) {
+    function sendPost(v, update) {
         done = 0;
+        if (update){
+            var loc = window.top.location.href;
+            var url = loc.substr(0, loc.indexOf('#'));
+            var dat = loc.substr(loc.indexOf('#') + 1);
+
+            console.log(dat);
+            if (dat.indexOf('#') != -1)
+                dat = dat.substr(0, dat.indexOf('#'));
+            console.log(dat);
+
+            window.top.location.href = encodeURI(url + '#' + dat + "#search=" + v);
+        }
         post = $.post('./docsearch.php', {search: v}, function (data) {
             if (data == "0") window.location.replace("../Login/");
             else {
@@ -50,8 +62,8 @@ $(document).ready(function () {
                 else {
                     $noresult.hide();
                     for (var i = 0; i < docs.length; i++) {
-                        var x=1;  //TODO: Remove this while loop, for testing only.
-                        // x=3;
+                        var x=1;  //TODO: Remove this while loop. For testing only.
+                        x=3;
                         while(x--){
                             var doc = docs[i];
                             var clone = $dummy.clone(true);
@@ -73,7 +85,7 @@ $(document).ready(function () {
             if (v == "") {
                 $noresult.hide();
             } else if (v != "" && done != 0) {
-                sendPost(v);
+                sendPost(v,true);
             }
         }, 800);
     }

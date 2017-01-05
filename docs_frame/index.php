@@ -67,10 +67,7 @@ $result = sql("SELECT * FROM `docstarred` WHERE `pid`='$pid'");
             <div class="filterOption">FilterOpt</div>
             <div class="filterOption">FilterOpt</div>
         </div>
-
-        <div id="searchResults">
-
-        </div>
+        <div id="searchResults"></div>
         <div id="noResult" style="display:none">No Matching Result Found.</div>
         <div id="dummy" style="display: none;">
             <div class="searchedDoc">
@@ -81,10 +78,7 @@ $result = sql("SELECT * FROM `docstarred` WHERE `pid`='$pid'");
                 </div>
             </div>
         </div>
-
-
     </div>
-
 </div>
 
 
