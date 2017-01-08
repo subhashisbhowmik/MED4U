@@ -59,6 +59,7 @@ $result = sql("SELECT * FROM `docstarred` WHERE `pid`='$pid'");
     </div>
     <div id="searchDiv">
         <div id="searchBox">
+            <button id="searchAllClose"><img src="../Home/back.svg"/></button>
             <button id="searchBtn"><img src="./search-icon.svg"/></button>
             <input id="searchInput" type="text" name="input0" placeholder="Search All Doctors in MED4U..."/>
         </div>
@@ -67,8 +68,9 @@ $result = sql("SELECT * FROM `docstarred` WHERE `pid`='$pid'");
             <div class="filterOption">FilterOpt</div>
             <div class="filterOption">FilterOpt</div>
         </div>
-        <div id="searchResults"></div>
         <div id="noResult" style="display:none">No Matching Result Found.</div>
+        <div id="searchResults"></div>
+
         <div id="dummy" style="display: none;">
             <div class="searchedDoc">
                 <div class="searchedDocPic"><img src=""></div>

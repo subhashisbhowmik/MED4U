@@ -61,36 +61,27 @@
 }
 /********************************/
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     margin: 0;
     padding: 0;
     border: 0;
     font-size: 100%;
-    font: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     vertical-align: baseline
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+article, aside, details, figcaption, figure, footer, header,  menu, nav, section {
     display: block
 }
 ol, ul {list-style: none;}
 
-blockquote, q {
-    quotes: none
-}
-
-blockquote:before, blockquote:after, q:before, q:after {
-    content: '';
-    content: none
-}
 
 table {
     border-collapse: collapse;
     border-spacing: 0
 }
-::-webkit-scrollbar {
-    display: none;
-}
+
 *{
     outline:none;
 }
@@ -100,8 +91,6 @@ body {
     margin: 0;
     border: 0;
     border: none;
-    padding: none;
-    margin: none;
     font-family: 'Droid Sans', sans-serif;
     background-color: #ddd;
 }
@@ -135,7 +124,6 @@ ul, li, a {
     box-sizing:border-box;
     display: block;
     margin: 0 auto;
-    box-sizing: border-box;
     margin-bottom: 10px;
     box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.16), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
     background-color: #f8f8f8;
@@ -221,8 +209,6 @@ ul, li, a {
 #footer {
     width: 100%;
     box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.16), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
-    color: #a33;
-    display: flex;
     justify-content: center;;
     align-items: center;
     text-align: center;
@@ -240,8 +226,8 @@ ul, li, a {
     width: 100%;
     position: absolute;
     margin:0 auto;
-    top: 0%;
-    left: 0%;
+    top: 0;
+    left: 0;
     height: 100%;
     box-shadow:none;
     border-radius: 3px;
@@ -261,21 +247,22 @@ ul, li, a {
     position:absolute;
     display:none;
     float:right;
+    height: 25px;
+    width: 24px;
     margin-right:5px;
-    user-select:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;
+    user-select:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;
 }
-.item_content{
+    /*.item_content{
     padding:5px;text-align:center;display:none;border-left:4px solid #222;width:80%;margin:5px auto;
-
 }
+*/
 html{overflow-x:hidden !important;}
 
 .item>.tile_icon{
     display: inline-block;
-    height: 50%;
-    margin: 30px auto;
+    height: 45%;
+    margin: 20px auto;
     width: auto;
-    display: inline-flex;
 }
 .item>.activeIcon{
     position: absolute;
@@ -426,6 +413,9 @@ html{overflow-x:hidden !important;}
         justify-content: center;
         float: left;
         z-index: -20;
+    }
+    .item>.tile_icon{
+        height: 30%;
     }
     .item:last-child{
         width: 100%;

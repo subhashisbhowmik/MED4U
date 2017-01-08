@@ -12,16 +12,7 @@ $(document).ready(function(){
                 $("#settings-btn").show();
                 $("#settings-close").hide();
             });
-
-            /************************/  
-            /*$(document).keypress(function(e){
-            	if($("#search-input").val().length>=0){
-            		$("#search-results").fadeIn(150);
-            	}
-            	else{
-            		$("#search-results").fadeOut();
-            	}
-            });*/
+    
 
             function searchBarActivator(callback){
             	if($(document).width()<900){

@@ -7,7 +7,7 @@ $(document).ready(function () {
             $('#wrapper').find('#i' + hash[1]).click();
         },100);
     }
-    $("#preloader").delay(1000).fadeOut(250);
+    $("#preloader").delay(700).fadeOut(250);
     var _w = $(document).width(), _h = $(window).height();
     //if ((width <= 1023) && (height >= 768)) {
 

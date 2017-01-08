@@ -3,23 +3,15 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     padding: 0;
     border: 0;
     font-size: 100%;
-    font: inherit;
-    vertical-align: baseline
+    vertical-align: baseline;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
     display: block
 }
 ol, ul {list-style: none;}
-
-blockquote, q {
-    quotes: none
-}
-
-blockquote:before, blockquote:after, q:before, q:after {
-    content: '';
-    content: none
-}
 
 table {
     border-collapse: collapse;
@@ -64,8 +56,6 @@ body {
     margin: 0;
     border: 0;
     border: none;
-    padding: none;
-    margin: none;
     font-family: 'Droid Sans', sans-serif;
     background-color: #eee;
 }
@@ -166,12 +156,12 @@ ul, li, a {
 
     padding-top:20px;
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
     /*background-color: #e8e8e8;*/
 }
 #searchBox{
-
+    overflow: hidden;
     display: block;
     width: 96%;
     box-sizing: border-box;
@@ -184,6 +174,29 @@ ul, li, a {
     color: #333;
     border-radius: 22px;
     box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.16), 0 1px 5px 0 rgba(0, 0, 0, 0.12);    
+}
+#searchAllClose{
+    height:100%;
+    width:35px !important;
+    transition: 0.3s ease-out ;
+    border: none;
+    display: inline-block;
+    padding: 8px;
+    box-sizing:border-box;
+    background: transparent;
+    font-size: 0.9em;
+    border-radius: 50%;
+    color: inherit;
+    cursor: pointer;
+    z-index: inherit;
+    float: left;
+    overflow:hidden;
+    outline: none;
+    visibility: hidden;
+    margin-left: -40px;
+}
+#searchAllClose:hover{
+    background-color: #ddd;
 }
 #searchBtn{
     height:100%;
@@ -204,9 +217,10 @@ ul, li, a {
     overflow:hidden;
     outline: none;
 }
+
 #searchBtn:hover{background-color: #ddd;}
 #searchInput{
-    width: calc(100% - 45px);
+    width: calc(100% - 95px);
     height:100%;
     float:left; 
     padding: 5px;  
@@ -232,7 +246,7 @@ ul, li, a {
 #searchFilter{
     background-color:#dedede;
     border-radius: 3px;
-    padding:0px ;
+    padding:0 ;
     box-sizing: border-box;
     width: 96%;
     margin:0 auto;
@@ -258,26 +272,31 @@ ul, li, a {
     opacity: 0.9;
 }
 #searchResults{
-    /*background-color:#dedede;*/
+    background-color:#eeeeee;
     border-radius: 3px;
     padding:7px 10px ;
     box-sizing: border-box;
     white-space: nowrap;
     width: 96%;
-    margin:15px auto 0;
+    margin:5px auto;
     overflow:auto;
-    height: calc(100% - 65px);
+    display: block;
+    height:200px;
+    transition: 0.1s;
 }
+
 
 #noResult{
     width: auto;
     height: auto;
-    margin: 10% auto 0;
+    margin: 10% auto ;
     font-size: x-large;
     color: #000000;
     opacity: 0.4;
+    margin-bottom:0;
     text-align: center;
     display: block;
+    clear: both;
 }
 
 #dummy{
@@ -362,6 +381,7 @@ ul, li, a {
     color: #eee;
     background-color: #d56363;
 }
+
 @media(max-width: 768px){
 	.searchedDoc{
 		width: 96%;

@@ -27,14 +27,22 @@ $(document).ready(function () {
         $starredHeader.slideUp('fast');
     }
     $searchIn.focusin(function () {
-        $starholder.hide('fast');
-        $starredHeader.slideUp('fast');
+        $("#searchAllClose").css({"visibility":"visible","marginLeft":"0"});
+        $starholder.hide(40);
+        $starredHeader.slideUp(50);
+        $("#searchResults").css({"height":" calc(100vh - 145px)"});
     });
-    $searchIn.focusout(function () {
+    /*$searchIn.focusout(function () {
         if ($searchIn.val() == "") {
             $starholder.slideDown('fast');
             $starredHeader.slideDown('fast');
         }
+    });*/
+    $("#searchAllClose").click(function () {
+        $(this).css({"visibility":"hidden","marginLeft":"-40px"});
+        $starholder.slideDown('fast');
+        $starredHeader.slideDown('fast');
+        $("#searchResults").css({"height":"200px"});
     });
 
     function sendPost(v, update) {

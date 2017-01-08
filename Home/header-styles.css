@@ -102,8 +102,8 @@ html{overflow-x:hidden !important;}
 	border:none;
 }
 .search-bar-dtop{
-	border-radius: 2px 2px 0 0 !important;
-	height: 40px !important;
+	border-radius: 2px !important;
+	height: 38px !important;
 }
 .search-bar-mbl{
 	border-radius: 2px 2px 0 0 !important;
@@ -127,7 +127,6 @@ html{overflow-x:hidden !important;}
     color: inherit;
     cursor: pointer;
     z-index: inherit;
-    float: right;
     opacity: 0.8;
     float: left;
 }
@@ -163,7 +162,6 @@ html{overflow-x:hidden !important;}
     color: #222;
     z-index: inherit !important;
     font-size: 1em;
-    transition: 0.2s; 
     outline: none;
 }
 
@@ -175,7 +173,7 @@ html{overflow-x:hidden !important;}
     top:0;
     position: absolute;
     box-shadow: 0 2px 1px 0px rgba(0, 0, 0, 0.16), 0 0 1px 0 rgba(0, 0, 0, 0.12);
-    max-height:calc(100vh - 50px);
+    max-height:calc(100vh - 45px);
     height: 40vh;
     border-top: 1px solid #ddd;
     color: #444;
@@ -263,6 +261,7 @@ html{overflow-x:hidden !important;}
 @media (min-width: 901px) {
    #settings-btn::before{content: "MENU";}
    #settings-close::before{content: "MENU";}
+   #search-results{border-radius: 3px;}
 }
 
 
